@@ -1,4 +1,4 @@
-# Welcome to Git Basic Courses
+# Welcome to Git Basic Course
 
 ## Terms
 
