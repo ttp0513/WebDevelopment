@@ -55,7 +55,6 @@ LetPhil is a career acceleration program designed to help people break into tech
 - Build and deploy a full-stack JavaScript app
 - Master DOM manipulation and asynchronous workflows
 - Learn React and build a portfolio project
-
 - Contribute to real-world JavaScript projects that make an impact
 
 ## 🤝 Connect with Me
