@@ -1,0 +1,122 @@
+<!-- Declares the document as HTML5-->
+<!DOCTYPE html>
+<!-- Root element, specify English -->
+<html lang = "en"> 
+<!-- Head Tag includes meta data such as stylesheet, viewport -->
+<head>
+    <meta charset="UTF-8">
+    <meta name= "author" content= "The Phan">
+    <meta name= "description" content= "This page contains all the things I am learning how 
+    to create as I learn HTML.">
+    <!-- keywords for accessibility and SEO -->
+    <meta name= "keywords" content="HTML, CSS, Web Development">
+    <!-- viewport meta ensures responsive design to mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML Journey </title>
+    <link rel="icon" href="html5.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css" type = "text/css">
+</head>
+
+<!-- body tag holds all visible content-->
+<body>
+    <!-- header tag h1 -> h6 where h1 is the largest -->
+    <h1> Welcome to My Web Page - H1 </h1>
+    <!-- horizontal row -->
+    <hr> 
+
+    <h2> I'm ready to learn HTML - h2 </h2>
+    <hr>
+
+    <h3> I code, therefore, I am - h3 </h3>
+
+    <!-- div tag is a sensory division-->
+    <div style="background-color: burlywood; padding: 10x;">
+        <h3> Div Section </h3>
+        <p> This is a block level container using "< div >"</p>
+        <p> It can contain other elements like <span style="color: blue"> this text </span> and <span style="color: green"> this text </span></p>
+        <p> It is useful for grouping content together.</p>
+    </div>
+    <!-- span tag is used to highlight words-->
+    <h3> Span: Hightlighting</h3>
+        <p> This text contains a <span style="color: red"> highlighted word </span> using < span > tag </span>
+    </p>
+    
+    <!-- section tag is used to define sections in a document -->
+    <section>
+    <!-- table: not commonly used, there are other ways to create tables-->
+     <table border="5" style="width: 100%;">
+        <h3> Table </strong>: My Daily Schedule </h3>
+        <!-- tr = table rows -->
+        <tr>
+            <!-- th = table headers -->
+            <th> Time </th> 
+            <th> Activity </th>
+        </tr>
+        <tr>
+            <!-- td = table data -->
+            <td> 8:00 AM </td>
+            <td> Breakfast </td>
+        </tr>
+        <tr>
+            <td> 9:00 AM </td>
+            <td> Coding Practice </td>
+        </tr>
+        <tr>
+            <td> 12:00 PM </td>
+            <td> Lunch Break </td>
+        </tr>
+    </table>
+    </section>
+
+    <!-- ul is an unordered list or bulleted list -->
+    <h3> Unordered List: Courses to learn HTML  < ul > </h3>
+    <ul>
+        <!-- li stands for a list row -->
+        <!-- a stands for an anchor tag linking to parts of the webpage or other sites -->
+        <li> <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank"> W3Schools HTML Introduction </a> </li>
+        <li> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"> MDN Web Docs on HTML </a> </li>
+        <li> <a href="https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/" target="_blank"> FreeCodeCamp HTML Course </a> </li>
+    </ul>
+
+    <!-- ol is an ordered list or numbered list -->
+    <h3> Ordered List: </strong> Steps to create a webpage < ol ></h3>
+    <ol>
+        <li> Plan your content </li>
+        <li> Write HTML structure </li>
+        <li> Style with CSS </li>
+        <li> Test in browsers </li>
+    </ol>
+
+    <!-- form tag is used to collect user input -->
+    <h3> Form: User Sign Up </h3>
+    <form>
+        <fieldset>
+            <legend> Contact Form </legend>
+            <label for="name"> Name: </label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email"> Email: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password"> Password: </label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <!-- create a dropdown selection -->
+            <select name="country" id="country">
+                <!-- create a list option with < option >-->
+                <option value="usa"> USA </option>
+                <option value="canada"> Canada </option>
+                <option value="uk"> UK </option>
+                <option value="australia"> Australia </option>
+            </select>
+            <br>
+            <!-- create a button -->
+            <button type="Submit"> Sign Up </button>
+        </fieldset>
+    </form>
+<!-- footer tag for copyright or contact info -->
+<footer>
+    <p> © 2023 HTML Learning </p>
+</footer>
+</body>
+</html>
