@@ -41,6 +41,15 @@ Here are some of the hands-on projects I'm working on:
 - [freeCodeCamp FullStack Course](https://www.freecodecamp.org/)
 - [The Odin Project](https://www.theodinproject.com/)
 
+## 🧭 Mentorship & Community
+
+I'm incredibly grateful to be mentored by **Phil** and become a also part of the **LetPhil community**, a supportive space where learners grow together, share wins, and push through challenges.
+
+> “Progress over perfection.” – Phil
+
+LetPhil is a career acceleration program designed to help people break into tech. You can learn more about it [here](https://letphil.com/).
+
+---
 ## 🎯 Goals
 
 - Build and deploy a full-stack JavaScript app
