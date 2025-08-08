@@ -1,6 +1,6 @@
 # 🚀 My Web Development Journey
 
-Hi there! I'm John Phan, and I'm currently diving deep into the world of **web development**. This repository is a reflection of my learning process, experiments, and growth as I explore how to build beautiful, functional websites and web applications.
+Hi there! I'm Trong, and I'm currently diving deep into the world of **web development**. This repository is a reflection of my learning process, experiments, and growth as I explore how to build beautiful, functional websites and web applications.
 
 ---
 
