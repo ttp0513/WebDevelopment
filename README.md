@@ -1,6 +1,6 @@
 # 🚀 My Web Development Journey
 
-Hi there! I'm John Phan, and I'm currently diving deep into the world of **web development**. This repository is a reflection of my learning process, experiments, and growth as I explore how to build beautiful, functional websites and web applications.
+Hi there! I'm Trong, and I'm currently diving deep into the world of **web development**. This repository is a reflection of my learning process, experiments, and growth as I explore how to build beautiful, functional websites and web applications.
 
 ---
 
@@ -55,7 +55,6 @@ LetPhil is a career acceleration program designed to help people break into tech
 - Build and deploy a full-stack JavaScript app
 - Master DOM manipulation and asynchronous workflows
 - Learn React and build a portfolio project
-
 - Contribute to real-world JavaScript projects that make an impact
 
 ## 🤝 Connect with Me
