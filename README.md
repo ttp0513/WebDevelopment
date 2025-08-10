@@ -40,6 +40,7 @@ Here are some of the hands-on projects I'm working on:
 - [roadmap.sh FullStack](https://roadmap.sh/full-stack)
 - [freeCodeCamp FullStack Course](https://www.freecodecamp.org/)
 - [The Odin Project](https://www.theodinproject.com/)
+- [CSS Diner](https://flukeout.github.io/)
 
 ## 🧭 Mentorship & Community
 

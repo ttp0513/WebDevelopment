@@ -1,0 +1,42 @@
+<!-- selectors: universal type, class, ID, attribute -->
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title> Class Selector </title>
+        <style>
+            h1 {
+                color: blue;
+                margin: 0;
+                padding: 10px
+            }
+
+            p {
+                color: green;
+            }
+
+            .hightlight {
+                background-color: yellow;
+                font-weight: bold; /* Bold text */
+            }
+
+            input {
+                padding: 10px; /* Inside out: Content > Padding > Border > Margin */
+                font-size: 16px;
+                border: 2px solid #ccc; 
+                border-radius: 4px; /* Rounded corners */
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> This is a header </h1>
+        <p class = "hightlight"> This is a hightlighted paragraph using class = hightlighted tag and css </p>
+        <p > This is a paragraph with green words using css and p tag </p>
+        <input type="text" placeholder="Type something..."> This is a input tag with some border and background color css
+        
+    </body>
+    </html>
