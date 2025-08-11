@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Root element, specify English -->  
+ <html lang = "en">
+    <!-- Head Tag includes meta data such as stylesheet, viewport -->
+     <head>
+        <meta charset="UTF-8">
+        <meta name= "author" content= "The Phan">
+        <meta name= "description" content= "Learn Flexbox">
+        <!-- keywords for accessibility and SEO -->
+        <meta name= "keywords" content="HTML, CSS, Web Development">
+        <!-- viewport meta ensures responsive design to mobile devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Flexbox Lesson </title>
+    <!-- CSS Flex Box-->
+        <style>
+            section#flexbox-container {
+                min-height: 900px; /* Set a minimum height for the section */
+                border: 8px solid black;
+                display: flex; /* This is the key property that enables Flexbox */
+
+                /* Flexbox properties */
+                justify-content: center;  /* This aligns items along the "main axis" (horizontal) */
+                    /* flex-end: aligns items to the end of the container
+                       center: aligns items to the center
+                       flex-start: aligns items to the start of the container, 
+                       space-between: distributes items evenly with no space at the start or end, bigger items = bigger gap 
+                       space-around: distributes items evenly with space around them, space between items = 2x space at the start and end
+                       space-evenly: distributes items evenly with space around them, space between items = space at the start and end 
+                    */
+                align-items: center; /* This aligns items along the "cross axis" (vertical) */
+                /*     When items wrap onto multiple lines (e.g., with flex-wrap), align-items applies to each line individually. */
+                
+                /* To control the alignment of all the lines together, use the align-content property */       
+                align-content: center; 
+                    /* flex-start = aligns lines to the start of the container
+                       flex-end = aligns lines to the end of the container
+                       center = aligns lines to the center of the container
+                       space-between = distributes lines evenly with no space at the start or end
+                       space-around = distributes lines evenly with space around them
+                       stretch = stretches lines to fill the container */
+
+
+                /* To change the direction of the main axis, 
+                you can use the flex-direction property */
+                flex-direction: row; /* 
+                        column = changes the main axis to vertical, so items stack on top of each other
+                        row = changes the main axis to horizontal, so items are side by side
+                        row-reverse = reverses the order of items in a row
+                        column-reverse = reverses the order of items in a column
+                        */
+                
+                gap: 20px; /* This sets space between the flex items */
+                
+                /* To allow items to wrap onto multiple lines, 
+                when there is not enough space, you can use the flex-wrap property */
+                flex-wrap: wrap; 
+                     /* nowrap = items will not wrap onto multiple lines, they will overflow the container
+                        wrap = items will wrap onto multiple lines when there is not enough space
+                        wrap-reverse = items will wrap onto multiple lines in reverse order */
+                
+                
+                /* Since flexbox is flexible, the layout will adjust based on the size of the viewport */
+            }
+            /* Most elements have a default display value of block or inline */
+            .box{
+                display: flex;
+                justify-content: center; /* Center content horizontally */
+                align-items: center; /* Center content vertically */
+                height: 200px;
+                width: 200px;
+                background-color: lightblue;
+                font-size: 40pt;
+            }
+            
+            #box-1{
+                flex-grow: 1; 
+                /* flex-grow: 1 = allows the item to fill out the empty space inside their parent element*/
+                /* flex-grow: 0; = items will not grow to fill the container */
+                /* flex-grow: 2 or more; = items will grow to fill the container,
+                 but will take up twice or more as much space as items with flex-grow: 1 */
+                
+                 max-width: 500px; /* This sets a maximum width for the item
+                 so box-1 can grow but cannot grow more than 300px */
+                
+                flex-shrink: 0; 
+                /* flex-shrink: 1 = items will shrink to fit the container 
+                   flex-shrink: 0 = items will not shrink to fit the container */
+                min-width: 200px; /* This sets a minimum width for the item
+                 so box-1 cannot shrink smaller than 200px */
+            }
+
+            /* To solve the overflow issue with flex-shrink, you can combine with flex-wrap */
+            @media (max-width: 600px) {
+                #box-1 {
+                    flex-wrap: wrap; /* This allows box-1 item to shrink to the minimum width of 200px, 
+                    then wrap onto the next line if there is not enough space */
+                }
+            }
+
+            /* Create a Logo header home page */
+            section#company{
+                display: flex;
+                border: 8px solid black;
+                justify-content: flex-end;
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+            
+            
+           .company_info {
+                display: flex;
+                justify-content: flex-end;
+                font-size: 24px;
+           }
+
+           #logo{
+                width: 70px;
+                height: 24px;
+                margin-right: auto;
+           }
+
+        </style>
+
+     </head>
+
+    <!-- body tag holds all visible content-->
+    <body>
+        <section id="flexbox-container">
+        <div class = "box" id="box-1"> 1</div>   
+        <div class = "box"> 2</div>
+        <div class = "box"> 3</div>
+        <div class = "box"> 4</div>
+        <div class = "box"> 5</div>
+        <div class = "box"> 6</div>
+        </section>
+
+        <section id="company">
+            <div class= "company_info" id="logo">
+                <img src="https://thfvnext.bing.com/th/id/OIP.D87mhlo809asaByzh6q5hgHaDt?w=317&h=174&c=7&r=0&o=7&cb=thfvnext&pid=1.7&rm=3" alt="Company Logo">
+            </div>
+            <div class= "company_info"> About </div>
+            <div class= "company_info"> Services </div>
+            <div class= "company_info"> Contact </div>
+            <div class= "company_info"> Careers </div>
+        </section>  
+    </body>
+    </html>
+
+
