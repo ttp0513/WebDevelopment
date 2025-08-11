@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(190, 190, 228);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid whitesmoke; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* add dept */
+    text-align: center;
+}
+
+.card h2{
+    margin-bottom: 10px;
+}
+
+.card p{
+    font-style: italic;
+}
+
+/* Key takeaways: 
+- The Box model consists of content > padding > border > margin (inside out)
+- Box-sizing: border-box ensures width and height including padding/border
+- Margins create outer space, while padding creates inner space
+- Borders wrap around elements and can have different styles
+- Box shadow adds depth for a modern look
