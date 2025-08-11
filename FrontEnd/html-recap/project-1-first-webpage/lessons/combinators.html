@@ -1,2 +1,47 @@
 <!-- combinators: descendent child, silbing -->
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content = "Combinators Lession">
+        <title> Combinators </title>
+        <style>
+            div > p {
+                color: green;
+            }
+
+            section > p{
+                color: blue;
+            }
+            
+            /* select the first p inside h2 */
+            h2 + p{
+                color: purple;
+            }
+
+            h3 ~ p{
+                color: red; 
+            }
+        </style>
+   </head>
+   <body>
+        <div>
+            <p> This paragraph is inside a div, or a direct child or descendent of div. To select this direct, using "div > p"  </p>
+                <section> 
+                    <p> This paragraph is inside a section embedded inside a div, so this paragraph is not a direct child of div. To select this non-direct child, using "section > p" </p>
+                </section>
+        </div>
+
+        <h2> heading 2 </h2>
+            <p> this is selected using h2 + p </p>
+            <p> this is not selected using h2 + p </p>
+
+        <h3> heading 3</h3>
+            <p> first paragraph - all p tag element are selected using h3 ~ p</p>
+            <p> second paragraph - all p tag element are selected using h3 ~ p</p>
+            <h4> this is heading 4, not selected</h4>
+            <p> third paragraph - all p tag element are selected using h3 ~ p</p>
+
+   </body>
+</html>
