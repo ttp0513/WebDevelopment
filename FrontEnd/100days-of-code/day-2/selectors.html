@@ -25,12 +25,23 @@
             }
 
             input {
+                /* These are properties of input element */
                 padding: 10px; /* Inside out: Content > Padding > Border > Margin */
                 font-size: 16px;
                 border: 2px solid #ccc; 
                 border-radius: 4px; /* Rounded corners */
                 background-color: aqua;
             }
+
+            /* Nesting of CSS Selectors */
+            div p{
+                color: red;
+            }
+
+            /* Grouping of CSS Selectors */
+            h2, h3{
+                color: purple;
+            } 
         </style>
     </head>
     <body>
@@ -38,6 +49,12 @@
         <p class = "hightlight"> This is a hightlighted paragraph using class = hightlighted tag and css </p>
         <p > This is a paragraph with green words using css and p tag </p>
         <input type="text" placeholder="Type something..."> This is a input tag with some border and background color css
-        
+        <div>
+            <p> This is a paragraph inside a div and we using CSS Nesting to make it red</p>
+        </div>
+
+        <h2> This is h2 - CSS grouped with h3 by using "h2, h3 {}"</h2>
+        <h3> This is h3</h3>
+
     </body>
     </html>
