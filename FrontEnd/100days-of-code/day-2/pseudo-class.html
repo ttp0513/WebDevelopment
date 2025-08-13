@@ -1,4 +1,6 @@
 <!-- Pseudo classes apply styles when elements are in a certain state: hover, focus, visited, etc -->
+<!-- Pseudo elements, formed with a colon colon "::", 
+        insert content before and after, add extra content without modifying html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +73,16 @@
         background-color: gray;
     }
 
+    p::before {
+        content: " Adding a '' before ";
+        color: blue
+    }
+
+    p::after {
+        content: " '' Adding a '' after " ;
+        color: yellowgreen
+    }
+
     </style>
 </head>
 <body>
@@ -93,6 +105,10 @@
             <li> item nth-child 2</li>
             <li> item nth-child 3</li>
         </ul>
+    </div>
+    <hr>
+    <div id="quote">
+        <p> This is a quote </p>
     </div>
 </body>
 </html>
