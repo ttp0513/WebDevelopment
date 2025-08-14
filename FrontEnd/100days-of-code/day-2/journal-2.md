@@ -71,8 +71,6 @@ Used to style parts of an element:
 - `::after` – inserts content after the element
 - `::first-letter`, `::first-line` – stylize specific parts of text
 
-## Box Model
-
 ---
 
 ## 🎮 Practice Resources
