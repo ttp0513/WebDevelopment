@@ -1,9 +1,7 @@
 # 📘 Day 4 – Web Development Learning Summary
 
 ## 📝 Summary  
-Today was a super rewarding day. I got to dive into **CSS typography** and **color/background styling**, and it honestly made my pages come alive! I played around with different font families, sizing units, text alignment, spacing, transformations, and decorations. Importing custom fonts from Google Fonts felt like unlocking a new level of design control.
-
-Even more exciting was learning how to apply **color theory**—using `color`, `background-color`, gradients, and background images to create depth and personality in my layouts. It was like painting with code!
+Today was a super rewarding day. I got to dive into **CSS typography** and **color/background styling**, and it honestly made my pages come alive and I felt like I was painting with code! I played around with different font families, sizing units, text alignment, spacing, transformations, and decorations. Importing custom fonts from Google Fonts felt like unlocking a new level of design control.
 
 To put everything into practice, I completed the **Nutrition Label** project, which really helped me connect the dots between typography, layout, spacing, and semantic structure. I also built a mini **Hero Section** to experiment with backgrounds and layout flow.
 
