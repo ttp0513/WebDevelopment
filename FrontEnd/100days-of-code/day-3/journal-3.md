@@ -1,7 +1,7 @@
 # Day 3 – Web Development Learning Summary
 
 ## 📝 Summary
-Today, I focused on mastering **CSS layout and positioning techniques**, which are essential for building structured, responsive, and visually engaging web interfaces. I explored various `display` properties, positioning strategies, alignment tools, and overflow handling. To apply these concepts, I built a comprehensive demo page showcasing how different elements behave in layout and positioning contexts. This hands-on approach helped solidify my understanding and gave me practical insight into how CSS controls the flow and appearance of content.
+Today, I focused on mastering **CSS layout and positioning techniques**, which are essential for building structured, responsive, and visually engaging web interfaces. I explored various `display` properties, positioning strategies, alignment tools, and overflow handling. To apply these concepts, I built a **Sticky Navbar** showcasing how different elements behave in layout and positioning contexts. This hands-on approach helped solidify my understanding and gave me practical insight into how CSS controls the flow and appearance of content.
 
 ---
 

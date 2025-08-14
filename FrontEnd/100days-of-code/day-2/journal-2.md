@@ -3,7 +3,7 @@
 ## 📝 Summary
 - Today, I deepened my understanding of CSS by exploring layout techniques and advanced selectors. I learned how to use **Flexbox** to create responsive designs, mastered various **selectors and combinators** for precise targeting, and discovered the power of **pseudo-classes** and **pseudo-elements** for dynamic styling. 
 
-- Completing a mini-projet **Styled Card**, a main project **Cafe Menu**, and playing **CSS Diner** helped reinforce these concepts through interactive practice. This knowledge significantly improved my ability to style web pages with flexibility and control.
+- Completing **Styled Card**,  **Cafe Menu**, and playing **CSS Diner** helped reinforce these concepts through interactive practice. This knowledge significantly improved my ability to style web pages with flexibility and control.
 
 ---
 
