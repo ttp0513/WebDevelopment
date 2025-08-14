@@ -70,7 +70,7 @@ I’m genuinely proud of how much I’ve learned today. These skills are startin
 
 ---
 
-### Text & Background Styling
+### 🖼️ Text & Background Styling
 - `color`: Sets the text color.
 - `background-color`: Sets the background color of an element.
 - `background-image`: Adds an image as the background.
@@ -81,7 +81,7 @@ I’m genuinely proud of how much I’ve learned today. These skills are startin
 
 ---
 
-### Gradient Backgrounds
+### 🖼️ Gradient Backgrounds
 background: linear-gradient(to right, #ff7e5f, #feb47b); 
 Noted: Can add more than 2 colors and direction can be 90deg, 180deg, etc.
 
