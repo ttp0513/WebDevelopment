@@ -37,16 +37,14 @@ header {
     font-size: 2rem;
     text-transform: uppercase;
 }
-/* Section Header */
 
+/* Section Header */
 section h2{
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 /* Latest Post */
-
-
 .latest-post {
     background-color: #1c2f3f;
     padding: 2rem;
@@ -99,6 +97,7 @@ section h2{
 .intro {
     margin-bottom: 1rem;
 }
+
 /* Recent Posts */
 
 .post-card {
