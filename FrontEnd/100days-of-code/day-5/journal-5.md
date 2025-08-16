@@ -3,7 +3,7 @@
 ## 📝 Summary  
 Today, I dove deep into **CSS Grid** and **Media Query**, and it completely changed how I think about structuring web pages. Grid gave me precise control over placement, spacing, and responsiveness, and it felt like I was designing with invisible blueprints. I combined this with my growing knowledge of **CSS layout, typography** to build a full **Magazine Project**, which challenged me to balance visual hierarchy, readability, and design flow.
 
-I practiced defining grid containers, setting up columns and rows, and using properties like `grid-template-columns`, `grid-column`, and `place-items` to align content. The project also helped me refine my use of semantic HTML and responsive design principles. Seeing everything come together—the fonts, spacing, layout, and color—was incredibly satisfying.
+I practiced defining grid containers, setting up columns and rows, and using properties like `grid-template-columns`, `grid-column`, and `place-items` to align content. The project also helped me refine my use of semantic HTML and responsive design principles. Seeing everything come together, the fonts, spacing, layout, and color, was incredibly satisfying.
 
 ---
 
