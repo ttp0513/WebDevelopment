@@ -37,7 +37,8 @@
     blockquote{
       margin:0; font-size:clamp(20px, 3.2vw, 28px); line-height:1.35; font-weight:600; letter-spacing:.01em;
       min-height:4lh; /* keeps height stable during type */
-      text-wrap:balance;
+      text-align: justify; /* fallback for older browsers */
+      /* text-wrap: balance; */ /* Uncomment if targeting Chrome 114+ */
     }
     .cursor{display:inline-block; width:1ch; animation:blink 1s steps(1,end) infinite}
     @keyframes blink{50%{opacity:0}}
