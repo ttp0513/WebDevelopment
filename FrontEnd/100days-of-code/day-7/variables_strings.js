@@ -10,3 +10,12 @@ var city = "Atlanta";    // Older syntax, less commonly used now
 let greeting = "Hello, world!";
 let username = 'johnphan';
 let message = `Welcome, ${username}!`; // Template literal with variable
+
+// How to get the last character of a string using bracket notation?
+let hisName = 'Alex';
+let lastChar = hisName[hisName.length-1];
+console.log(lastChar); //output = 'x'
+
+// String Newline
+let poem = "Roses are red,\nViolets are blue,\nJavaScript is fun,\nAnd so are you.";
+console.log(poem); 
