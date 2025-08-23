@@ -82,7 +82,7 @@ Output: "Hello, World"</code>
 **String Interpolation & Template Literals**
 *Template literals* is defined with backticks (`) 
 
-*Syntax*: <code>\`${variable}\`</code>
+*Syntax*: <code>\`A string ${variable} remaining string\`</code>
 
 Strengths:
 1. Inserting variables and expressions directly into a string
