@@ -1,7 +1,15 @@
 # 📘 Day 9 Journal – JavaScript - Booleans & Numbers
 
 ## ✅ What I Did Today
-Today was a string-slinging adventure! I dove deeper into JavaScript’s text manipulation toolkit and came out feeling like a wizard of words. From slicing and dicing to repeating and replacing, I got hands-on with the kind of logic that powers real user interactions. 
+Today was all about sharpening my understanding of how JavaScript thinks. I explored the full spectrum of operators (**arithmetic, comparison, logical, bitwise and compound assignment**), and how they shape the decisions and calculations behind every line of code.
+
+I practiced building **conditional statements and switch cases**, which felt like giving my programs the ability to make choices. It’s empowering to see how a few lines of logic can control entire flows of behavior.
+
+I also got familiar with some quirky but powerful tools like `isNaN, parseInt, and toFixed`, which help wrangle numbers and user input with precision. These small utilities make a big difference when building real-world applications.
+
+Looking at my project folder, I’m proud of how much ground I’ve covered, from basic math operations to branching logic. Each `.js` file is a snapshot of progress, and I’m starting to see how these pieces will eventually fit into larger, interactive projects.
+
+In the next coming days, I’ll be diving into reference data types: `objects`, `arrays`, and `functions`. I’m excited to move from raw logic into structured data and reusable components. The foundation is set, and the real building begins.
 
 ---
 
