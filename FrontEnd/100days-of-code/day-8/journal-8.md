@@ -1,7 +1,7 @@
 # 📘 Day 8 Journal – JavaScript - Strings (continued)
 
 ## ✅ What I Did Today
-
+Today was a string-slinging adventure! I dove deeper into JavaScript’s text manipulation toolkit and came out feeling like a wizard of words. From slicing and dicing to repeating and replacing, I got hands-on with the kind of logic that powers real user interactions. 
 
 ## 🎨 What is <code>prompt()</code>?
 *Definition*
