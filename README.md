@@ -35,7 +35,6 @@ Here are some of the hands-on projects I'm working on:
 | Project Name       | Description                          | Status     |
 |--------------------|--------------------------------------|------------|
 | `portfolio-site`   | My personal portfolio website        | 🚧 In Progress |
-| `portfolio-site`   | My personal portfolio website        | 🚧 In Progress |
 
 ## 📚 Resources I'm Using
 - [roadmap.sh FullStack](https://roadmap.sh/full-stack)
