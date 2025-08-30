@@ -1,8 +1,7 @@
 # 📘 Day 11 Journal – JavaScript - Arrays
 
 ## ✅ What I Did Today
-Today was all about deepening my understanding of JavaScript arrays. I explored both 1D and 2D structures and practiced manipulating them in different ways. By working through examples and projects `lunch-picker` and `snack-list`, I’m starting to see how arrays form the backbone of so many logic-based operations. The destructuring and shallow copy techniques were especially useful for writing cleaner, safer code.
-
+Today was all about deepening my understanding of JavaScript arrays. I explored both 1D and 2D structures and practiced manipulating them in different ways. By working through examples and projects `lunch-picker` and `snack-list`, I’m starting to see how arrays form the backbone of so many logic-based operations. The destructuring and shallow copy techniques were especially useful for writing cleaner, safer code. 
 ---
 ## 1D Arrays
 - **Array** is a single row of boxes representing an ordered collection of values, each identified by a numeric index
@@ -119,14 +118,16 @@ console.log(numbers.includes(35, 4)); // false
 
 ### Array Shallow copy 
 **A shallow copy is not equal to the original array due to reference equality**
-1. `[...array]` or `spread operator`: create a copy of the `array` without modifying it
+#### `[...arrayName]` or `spread operator`
+This create a copy of the `array` without modifying it
 ```js
 let original = [1, 2, 3, 4, 5];
 let copy = [...original];
 console.log(copy === original) // false
 
 ```
-2. `[].concat(array)`: create a shallow copy by merging 2 or more arrays. 
+#### `[].concat(array)`
+This create a shallow copy by merging 2 or more arrays. 
 ```js
 let originalArray = [1, 2, 3];
 let copyArray = [].concat(originalArray);
@@ -134,7 +135,8 @@ let copyArray = [].concat(originalArray);
 console.log(copyArray); // [1, 2, 3]
 console.log(copyArray === originalArray); // false
 ```
-3. `array.splice()`: returns a shallow copy of the entire array
+#### `array.splice()`
+This returns a shallow copy of the entire array
 ```js
 let originalArray = [1, 2, 3];
 let copyArray = originalArray.slice();
