@@ -193,4 +193,113 @@ console.log(person.sayHello()); // "Hello, my name is Bob"
 ```
 
 ### Object Constructor `Object()`
-zxs
+#### Structure
+- `Object()` is a built-in constructor used to create generic objects.
+- It can be invoked with or without the `new` keyword:
+  ```js
+  const obj1 = new Object(); // creates an empty object, similar to {}
+  const obj2 = Object();     // also creates an empty object
+  ```
+- `typeof obj1` returns `"object"`.
+
+- Constructor functions must be capitalized by convention (e.g., Person, Car, User)
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.greet = function() {
+    console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+  };
+}
+
+const person1 = new Person("Alice", 30);
+const person2 = new Person("Bob", 25);
+
+person1.greet(); // Hi, I'm Alice and I'm 30 years old.
+person2.greet(); // Hi, I'm Bob and I'm 25 years old.
+```
+#### Passing `null`, `undefined` to `Object()`
+- The result will be an empty object
+```js
+const newObj = new Object(undefined);
+console.log(newObj); // {}
+```
+
+### Object Optional Chaining Opetaor `?.`
+
+- The optional chaining operator (`?.`) is a useful tool in JavaScript that lets you safely access object properties or call methods without worrying whether they exist. 
+
+- By using the optional chaining operator, we are telling JavaScript to only continue with the operation if the object (or the value before the ?.) exists and is not null or undefined.
+
+- If the value before the ?. is null or undefined, JavaScript returns undefined rather than attempting to proceed with the operation and throwing an error.
+```js
+let car = {
+    brand: "Toyota",
+    model: "Corolla"
+};
+console.log(car.color.year) // Uncaught TypeError
+console.log(car?.color?.year); // undefined
+```
+### Object Notation (JSON)
+#### Definition
+**JSON stands for JavaScript Object Notation**. It is a lightweight, text-based data format that is commonly used to exchange data between a server and a web application. Example:
+```js
+{
+  "name": "Alice",
+  "age": 30,
+  "isStudent": false,
+  "list of courses": ["Mathematics", "Physics", "Computer Science"]
+}
+```
+
+- JSON is **language-independent**: can easily send JSON data between Java app and Python app
+- JSON supports many data types (objects, arrays, strings, numbers, boolean)
+#### Access JSON
+- To access JSON, users can either use dot or bracket notation
+```js
+
+import data from "./example.json" with { type: "json" };
+
+console.log(data.age);
+console.log(data["list of courses"]) // use bracket notation because the key contains space.
+```
+#### JSON Methods: 
+##### `JSON.parse()`
+`JSON.parse()` converts a JSON string back into a JavaScript object.
+```js
+const jsonString = '{"name":"John","age":30,"isAdmin":true}';
+const userObject = JSON.parse(jsonString);
+console.log(userObject);
+// {
+//   name: "John",
+//   age: 30,
+//   isAdmin: true
+// }
+```
+
+##### `JSON.stringtify()`
+`JSON.stringify()` is used to convert a JavaScript object into a JSON string.
+
+**Syntax:** `JSON.stringtify(objectName, ["key1","key2"], space)` 
+  - `["key1"]`, `["key2"]` are optional, used when specifying which properties we want stringtified
+  - Replace `["key1"]` with `null` = don’t filter any properties — include everything.
+  - `space`: Adds X spaces of indentation for each level of nesting, making the output easier to read. 
+```js
+const user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+console.log(JSON.stringify(user));
+// {"name":"John","age":30,"isAdmin":true}
+console.log(JSON.stringify(user, ["name","age"]));
+// {"name":"John","age":30}
+console.log(JSON.stringify(user, null, 2));
+// {
+//   "name": "John",
+//   "age": 30,
+//   "isAdmin": true
+// }
+```
+
