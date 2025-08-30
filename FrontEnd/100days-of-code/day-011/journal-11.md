@@ -135,7 +135,7 @@ let copyArray = [].concat(originalArray);
 console.log(copyArray); // [1, 2, 3]
 console.log(copyArray === originalArray); // false
 ```
-#### `array.splice()`
+#### `array.slice()`
 This returns a shallow copy of the entire array
 ```js
 let originalArray = [1, 2, 3];
