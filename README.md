@@ -9,22 +9,22 @@ Hi there! I'm Trong, and I'm currently diving deep into the world of **web devel
 I'm currently focused on mastering the **fundamentals** and gradually building up to more advanced topics:
 
 ### 🔤 Core Web Skills
-- ✅ HTML: Semantic structure and accessibility
-- ✅ CSS: Styling, Flexbox, Grid, and animations
-- 🔄 Responsive Design: Mobile-first and media queries
-- 🔄 Git & GitHub: Version control and collaboration
+- ✅ HTML: Semantic structure and accessibility - Done
+- ✅ CSS: Styling, Flexbox, Grid, and animations - Done 
+- 🔄 Responsive Design: Mobile-first and media queries - Done
+- 🔄 Git & GitHub: Version control and collaboration - In progress
 
 ### ⚙️ JavaScript Focus
-- ✅ Variables, Data Types, and Operators
-- ✅ Functions and Scope
-- ✅ DOM Manipulation and Events
-- ✅ Arrays and Objects
-- ✅ Loops and Conditionals
-- 🔄 ES6+ Features (Arrow functions, Destructuring, Spread/Rest)
-- 🔄 Asynchronous JS (Promises, async/await)
-- 🔜 Fetch API and working with JSON
-- 🔜 JavaScript Modules and Tooling (Webpack, Babel)
-- 🔜 React.js: Component-based 
+- ✅ Variables, Data Types, and Operators - Done
+- ✅ Functions and Scope - Practicing 
+- ✅ DOM Manipulation and Events - Will catch these up 
+- ✅ Arrays and Objects - Practicing
+- ✅ Loops and Conditionals - - Will catch these up 
+- 🔄 ES6+ Features (Arrow functions, Destructuring, Spread/Rest) - Will catch these up 
+- 🔄 Asynchronous JS (Promises, async/await) - Will catch these up 
+- 🔜 Fetch API and working with JSON - Will catch these up 
+- 🔜 JavaScript Modules and Tooling (Webpack, Babel) - Will catch these up 
+- 🔜 React.js: Component-based  - Will catch these up 
 
 ---
 
@@ -39,7 +39,6 @@ Here are some of the hands-on projects I'm working on:
 ## 📚 Resources I'm Using
 - [roadmap.sh FullStack](https://roadmap.sh/full-stack)
 - [freeCodeCamp FullStack Course](https://www.freecodecamp.org/)
-- [The Odin Project](https://www.theodinproject.com/)
 - [CSS Diner](https://flukeout.github.io/)
 
 ## 🧭 Mentorship & Community
