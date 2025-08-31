@@ -1,18 +1,19 @@
 # 📘 Day 12 Journal – JavaScript - Objects
 
 ## ✅ What I Did Today
+Day 12 felt like a real turning point in my web development journey. I dove deep into JavaScript objects—not just learning what they are, but how they shape the way we build and think about data in real-world applications. Through FreeCodeCamp’s object challenges and projects like the quiz game, record collection, and recipe tracker, I got hands-on with defining objects, accessing properties using both dot and bracket notation, checking for property existence, deleting keys, and even converting objects to and from JSON. I especially enjoyed working with nested objects and destructuring—those patterns made my code cleaner and more expressive. It’s exciting to see how these concepts will carry forward into more advanced topics like APIs and state management. Today reminded me that every line of code is a small step toward building something meaningful, and I’m genuinely proud of how far I’ve come.
 
 ## Object Facts
 - Objects are incredibly versatile and form the backbone of JavaScript. 
 - In fact, almost everything in JavaScript is an object or can be treated as one, these includes: array, objects, numbers, string, functions, etc...
 
 ### Structure of the Object
-Object = cabinet holds different folders (properties), each folder contains a piece of info (value)
+Definition: An object is a data structure that is made up of properties. A property consists of a `key` and `a value`
 
 ```js
 const exampleObject = {
-  propertyName1: value1;
-  propertyName2: value2;
+  propertyKey1: value1;
+  propertyKey2: value2;
   ...
 }
 ```
@@ -36,15 +37,17 @@ console.log(company.department.manager.name); // "John"
     - Can use variables to access properties dynamically
 
 ##### Single Object `objectName["propertiesName"]`
-    ```js
-    const person = {
-    name: "Alice",
-    age: 30,
-    1stcity: "Wonderland"
-    };
-    let propertyName = "1stcity";
-    console.log(person[propertyName]); // Wonderland
-    ```
+
+```js
+const person = {
+name: "Alice",
+age: 30,
+1stcity: "Wonderland"
+};
+let propertyName = "1stcity";
+console.log(person[propertyName]); // Wonderland
+```
+
 - Use Case:
     - When you don't know the exact property name at the time of writing the code
     - When you are working with property names that come from user input or dynamic source
@@ -167,6 +170,8 @@ console.log(copiedPerson.age); // 31
 ```
 
 ### Object Methods
+#### Definition:
+ Object methods are functions that are associated with an object. They are defined as properties of an object and can access and manipulate the object's data. The this keyword inside the method refers to the object itself, enabling access to its properties.
 
 #### Difference between functions vs object methods:
 1. Functions are called by their name, while methods are called using dot notation on the object they belong to.
@@ -227,11 +232,12 @@ console.log(newObj); // {}
 
 ### Object Optional Chaining Opetaor `?.`
 
-- The optional chaining operator (`?.`) is a useful tool in JavaScript that lets you safely access object properties or call methods without worrying whether they exist. 
+#### Definition:
+- The optional chaining operator (`?.`) lets you safely access object properties or call methods without worrying whether they exist.
 
-- By using the optional chaining operator, we are telling JavaScript to only continue with the operation if the object (or the value before the ?.) exists and is not null or undefined.
+- By using the optional chaining operator, we are telling JavaScript to only continue with the operation if the object (or the value before the `?.`) exists and is not null or undefined.
 
-- If the value before the ?. is null or undefined, JavaScript returns undefined rather than attempting to proceed with the operation and throwing an error.
+- If the value before the `?.` is `null` or `undefined`, JavaScript returns `undefined` rather than attempting to proceed with the operation and throwing an error.
 ```js
 let car = {
     brand: "Toyota",
