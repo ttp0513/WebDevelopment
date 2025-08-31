@@ -1,3 +1,4 @@
+// Create List of questions
 const questions = [
   {category: "Array",
   question: "Which method is used to add an element to the end of a JavaScript array?",
@@ -26,14 +27,19 @@ const questions = [
   },
 ];
 
+// Create a function that gets random question from the list
 function getRandomQuestion(questions) {
   return questions[Math.floor(Math.random()*questions.length)]
 }
 
-
+// Create a function that let the computer randomly select an answer from the list of choices
 function getRandomComputerChoice(choices) {
   return choices[Math.floor(Math.random()*choices.length)]
 }
+
+// Create a function that takes in two previous functions 
+// and returns the question and computer's answer, 
+// then decides if the answer is correct
 
 function getResults(objectQuestion, computerAnswer) {
   console.log('The question is, ', objectQuestion);
