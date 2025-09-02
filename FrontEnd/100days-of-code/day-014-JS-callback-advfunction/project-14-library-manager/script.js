@@ -90,3 +90,11 @@ console.log("\nTotal number of pages for all library books:\n");
     return catalog.map(book => book.pages).reduce((acc,cur) => acc + cur, 0)
   }
   console.log(`The total pages of all the books is ${getTotalPages(library)}`)
+
+// Request 5: Create a function that filters out books whose pages is less 400 pages, in ascending order
+
+const sortByPages = (book1, book2) => {
+    return book1.pages - book2.pages;
+}
+const filteredBooks = library.filter((books) => books.pages > 400).sort(sortByPages);
+console.log("Books that have more than 400 pages are: ", filteredBooks);
