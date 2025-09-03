@@ -149,7 +149,7 @@ for (const prop in person) {
 
 ### `forEach` loop
 #### Definition:
-- `.forEach()` is a method that executes a callback function once for each element in an array.
+- `.forEach()` is designed for side effects, not for producing a new value. It loops through the array and runs the callback function on each item, but it doesn't return anything useful. Its return value is always `undefined`
 - It’s great for performing actions like logging, modifying, or interacting with each item, **without returning a new array.**
 
 #### Syntax
