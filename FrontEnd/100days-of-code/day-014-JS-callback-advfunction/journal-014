@@ -142,6 +142,7 @@ console.log(hasSomeEvenNumbers); // true
 - This method is used to arrange the elements of an array and returns a reference to the sorted array
 - This does not return a copy of the original array because the elements are sorted in place
 
+
 ##### Syntax
 ```js
 array.sort(compareFunction);
@@ -153,6 +154,11 @@ array.sort(compareFunction);
 When array contains:
 - **string**:  alphabetical order
 - **number**: sort method converts the elements to strings and then compares their sequences of UTF-16 code units values.
+- **null/undefined**: sort treats null/holes as `undefined` when coerced to a string
+- **object** sort converts object into "[object Object]"
+- **Order**: small to large
+    -  ``` [{ '20': 5 }, "a", "b", undefined, empty] ```
+    
 
 ##### Sorting numeric values
 ```js 
