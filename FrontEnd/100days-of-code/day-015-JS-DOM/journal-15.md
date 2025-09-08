@@ -1,7 +1,11 @@
 # 📘 Day 15 Journal – JavaScript - API and DOM
 
 ## ✅ What I Did Today
+Today I spent time diving deeper into how JavaScript interacts with HTML through the DOM. It’s starting to click, the DOM isn’t just a concept, it’s a living tree of nodes that I can actually manipulate. I learned how to use querySelectorAll() to grab descendant elements, and how the DOM Tree helps visualize the structure of nested tags and relationships.
 
+Working with the DOM API felt empowering. I practiced creating new elements with createElement(), and updating content using innerText, textContent, and innerHTML. It was cool to see how each method behaves slightly differently depending on what I’m trying to change. I also explored how to add or remove nodes using appendChild() and removeChild(), and how to modify attributes with setAttribute().
+
+It reminded me that even though I’m still building my confidence, I’m learning how to control the browser, not just read it. That’s a big shift. I’m starting to see how this connects to real-world web development, and it makes me excited to keep going.
 
 ## API
 ### Definition
@@ -78,6 +82,7 @@ HTML
 | Method                    | Description                                 |
 |---------------------------|---------------------------------------------|
 | `document.getElementById()` | Selects an element by its ID                |
+| `document.getElementByTagName()` | Selects an element by its tag (e.g button, img, etc)               |
 | `document.querySelector()`  | Selects the first matching CSS selector     |
 | `document.querySelectorAll()` | Selects all matching elements as a NodeList |
 
@@ -341,47 +346,3 @@ divE1.setAttribute("class","example");
 // Now the class attribute is updated to `example` from `my-class`
 ```
 
-### Event Object
-#### Definition
-The Event Object is a special object automatically passed to event handler functions.
-
-It contains information about the event that occurred and methods to control its behavior.
-
-It’s triggered when a user interacts with the web page (e.g., clicks, types, scrolls).
-
-#### Always-Have Properties
-##### `type`
-- Describes the kind of event that occurred.
-- These values will correspond to the same values you might pass to `addEventListener()`
-    - `"keydown"`
-    - `"click:`
-    - `"submit"`
-##### `target
-- Refers to the DOM element that triggered the event.
-    - `document`
-    - `window` 
-    - `event.target` => often used to access the clicked or typed element
-
-#### Common Methods
-##### `preventDefault()`
-Cancels the default action (e.g., form submission, link navigation)
-
-##### `stopPropagation()`
-Prevents the event from bubbling up to parent elements
-
-##### `addEventListener()`
-Listen for event and respond to them
-It takes two arguments:
-- First argument: the event listened for
-- Second argument: the function that will be called when the event occursz
-
-#### Special Case: `FetchEvent`
-- Used in **Service Workers** (not typical in basic DOM events).
-- Contains a request property representing the network request that triggered the event.
-
-```js
-document.querySelector("form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Stops form from submitting
-  console.log("Form submitted:", event.target);
-});
-```
