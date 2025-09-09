@@ -1,4 +1,6 @@
 # 📘 Day 16 Journal – JavaScript - Event Object
+## ✅ What I did
+Today’s learning was tough—wrapping my head around event objects, animation loops, and the Canvas API definitely stretched me. But once I got the cat to walk across the screen using animate() and requestAnimationFrame(), it felt like magic. Seeing code come to life reminded me why this journey is worth it. It’s challenging, yes—but also incredibly exciting when things finally move.
 
 ## Event Object
 #### Definition
@@ -95,3 +97,149 @@ element.addEventListener("eventType", function(event) {
 <button onclick="alert('Hello World!')">Show alert</button>
 // When the user clicks on the button, the alert function is called and an alert dialog is displayed with the message Hello World!.
 ```
+
+### Style Manipulation
+Once an event (like a click or keypress) is captured by an event handler, you can use the Event Object to identify the target and then manipulate its appearance using:
+
+#### `element.style`
+- Directly modifies inline styles of the element
+- Can override CSS rules and become hard to maintain 
+
+```js
+element.style.backgroundColor = 'blue'
+element.style.display ='none'
+```
+#### `element.classList`
+- A read-only property that can be used to add, remove, or toggle classes on an element.
+- Can be used to add multiple classes by passing them as arguments to the `classList.add()` method
+- Remove a class from element with `classList.remove()`
+- To toggle a class on an element, use `classList.toggle()`
+
+```js
+// add the `highlight` class to the paragraph element using `classList.add()`
+const paraE1 = document.getElementById('para');
+paraE1.classList.add("highlight");
+
+// add multiple classes to the paragraph element
+paraE1.classList.add('class1', 'class2', 'class3');
+
+// remove class from the paragraph elemet
+paraE1.classList.remove('class1');
+```
+
+### `DOMContentLoadedEvent` vs `load`
+
+The `DOMContentLoaded` event is fired when everything in the HTML document has been loaded and parsed.
+  - If you have external stylesheets, or images, the DOMContentLoaded event will not wait for those to be loaded. It will only wait for the HTML to be loaded.
+  - Unlike `load` event which waits for everything to be loaded
+
+### Delay - Repeat Manipulation
+#### `setTimeout` - `clearTimeOut`
+- `setTimeout` delays an action for a specified time
+- `clearTimeout()` stops a timeout by taking the timeout ID
+
+```js
+setTimeout(function, delay (in milliseconds))
+```
+
+```js
+const timeOut = setTimeout(() => {
+  console.log("This runs after 3 seconds");
+}, 3000);
+
+clearTimeout(timeOut)
+```
+
+#### `setInterval`- `clearInterval`
+- `setInterval` keeps repeating a function at a set interval
+- Best for creating an animation that moves continuously or refreshing stock data.
+- Stop the repeat with `clearInterval()`by passing the interval ID as argument into the method
+
+```js
+setInterval(function, delay (in milliseconds));
+```
+```js
+setInterval(() = {
+  console.log("This runs every 2 seconds")
+}, 2000);
+// This runs every 2 seconds
+// This runs every 2 seconds
+// This runs every 2 seconds
+```
+
+```js
+const intervalID = setInterval(() => {
+  console.log("This will stop after 5 seconds");
+}, 1000;)
+
+setTimeOut(() => {
+  clearInterval(intervalID);
+}, 5000); // stop the repeat after 5 seconds
+```
+### Animation Loop - `requestAnimationFrame()`
+- A browser API that schedules a function to run before the **next screen repaint**, aka the moment when the browser refreshes the visual display of the web page, usually around 60 times per second (60fps)
+- Ideal for smooth, efficient animations (typically ~60 frames per second).
+- Replaces older timing methods like setInterval() for better performance.
+
+#### How it works
+1. Define an `update()` function to change styles or positions.
+2. Define an `animate()` function that:
+- Calls update()
+- Recursively calls requestAnimationFrame(animate)
+3. Kick off the loop with `requestAnimationFrame(animate)`
+
+### Web Animation API (WAAPI) - `animate()`
+- WAAPI allows user to create and control animations directly within JS using `animate()` method.
+- It provides more flexibility than CSS animations, especially for dynamic, interactive, or programmatically controlled effects.
+
+```js
+element.animate(keyframes, options);
+```
+- `keyframes`: an array or object defining the animation steps (e.g., { opacity: [0, 1] })
+
+- `options`: timing settings like duration, iterations, easing
+#### CSS animations vs WAAPI
+| Feature                  | CSS Animations                          | WAAPI (`animate()`)                            |
+|--------------------------|------------------------------------------|------------------------------------------------|
+| Syntax                   | Declarative (in CSS)                     | Imperative (in JS)                             |
+| Ideal for                | Simple, automatic effects                | Interactive, controllable animations           |
+| Control (pause, reverse) | Limited                                  | Full programmatic control                      |
+| Use cases                | Hover effects, transitions               | Click-based effects, scroll triggers, sliders  | 
+
+#### Animation constructor
+- The instance methods of the Animation constructor include:
+
+| Method        | Description                                                                 | Use Case Example                              |
+|---------------|-----------------------------------------------------------------------------|-----------------------------------------------|
+| `play()`      | Starts or resumes the animation                                             | Resume after pause                            |
+| `pause()`     | Pauses the animation                                                        | Stop animation on hover out                   |
+| `reverse()`   | Reverses the direction of the animation                                     | Toggle open/close animation                   |
+| `finish()`    | Jumps to the end of the animation and applies final styles                  | Instantly complete animation                  |
+| `cancel()`    | Stops the animation and removes its effects from the element                | Reset animation state                         |
+
+- The instance properties includes:
+
+| Property        | Description                                                                 | Use Case Example                              |
+|------------------|-----------------------------------------------------------------------------|-----------------------------------------------|
+| `playbackRate`   | Speed multiplier (e.g., `2` = twice as fast)                               | Speed up or slow down animation               |
+| `currentTime`    | Current time (in ms) of the animation’s progress                           | Sync with external timer                      |
+| `startTime`      | Timestamp when the animation started                                       | Debugging or syncing multiple animations      |
+| `effect`         | The KeyframeEffect object controlling the animation                        | Modify keyframes dynamically                  |
+| `timeline`       | The timeline the animation is linked to (usually `document.timeline`)      | Advanced control over timing                  |
+| `playState`      | Current state: `"idle"`, `"running"`, `"paused"`, `"finished"`             | Conditional logic based on animation status   |
+| `finished`       | A Promise that resolves when the animation finishes                        | Trigger next action after animation ends      |
+| `onfinish`       | Callback function when animation completes                                 | Show message or trigger next animation        |
+| `oncancel`       | Callback function when animation is canceled                               | Reset UI or log cancellation                  |
+
+### Canvas API
+The Canvas API lets you draw graphics directly in JavaScript using the \<canvas> HTML element.
+
+It’s ideal for creating shapes, text, animations, games, and visualizations.
+
+The canvas is a blank drawing surface that you manipulate using JavaScript.
+
+### Dialog Element
+- `dialog` let users display important info or actions to users.
+  - A **modal dialog**: a type of dialog that forces the user to interact with it before they can access the rest of the application or webpage
+  - A **non-modal dialog**: allows the user to continue interacting with other parts of the page or application even when the dialog is open
+
