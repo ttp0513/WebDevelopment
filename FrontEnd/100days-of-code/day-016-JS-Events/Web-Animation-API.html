@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Animation API</title>
+    <style>
+            body {
+            background: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: sans-serif;
+            }
+
+            .cat-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            }
+
+            .cat {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            }
+
+            button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+  <!-- Visual container for the walking cat -->
+  <div class="cat-container">
+    <img src="https://thfvnext.bing.com/th/id/OIP.Vgb8UhaNxtuw-yNgEwIccAHaEi?w=285&h=180&c=7&r=0&o=7&cb=thfvnext&pid=1.7&rm=3" alt="Walking Cat" class="cat" id="cat" />
+  </div>
+
+  <!-- Control buttons -->
+  <button id="playBtn">Play</button>
+  <button id="pauseBtn">Pause</button>
+
+  <script>
+    // Select DOM elements
+    const cat = document.querySelector("#cat");
+    const playBtn = document.querySelector("#playBtn");
+    const pauseBtn = document.querySelector("#pauseBtn");
+
+    // Create the walking animation using WAAPI
+    const animation = cat.animate(
+      [
+        { transform: "translateX(0px)" },           // Start position
+        { transform: "translateX(90vw)" }           // End position (80% of viewport width)
+      ],
+      {
+        duration: 6000,                              // Animation lasts 6 seconds
+        iterations: Infinity,                        // Loops forever
+        direction: "alternate",                      // Moves back and forth
+        easing: "ease-in-out"                        // Smooth acceleration and deceleration
+      }
+    );
+
+    animation.pause(); // Start with animation paused
+
+    // Play the animation when "Play" button is clicked
+    playBtn.addEventListener("click", () => {
+      animation.play();
+      console.log("Cat starts walking");
+    });
+
+    // Pause the animation when "Pause" button is clicked
+    pauseBtn.addEventListener("click", () => {
+      animation.pause();
+      console.log("Cat takes a break");
+    });
+</script>
+</body>
+</html>
