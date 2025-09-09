@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM example</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Event Handler</h1>
+
+    <button id ='change_background'>Change Background Color to Blue</button><br>
+    <p id="para"><strong>MouseOver this text to remove the Change Background Color event</strong></p>
+    <button class="add">Add new Paragraph</button>
+    <button class="remove">Remove new Paragraph</button>
+    <br>
+    <br>
+    <input type="text" id='textInput' placeholder="Type something and press Enter" id="input-field">
+    <p id="display"></p>
+
+    <!-- Inline event handler-->
+    <button onclick= 'alert("Button clicked!")'>Click Me</button>
+
+    <script>
+ 
+    // Create a new paragraph element with the first button and click
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = "This is a new paragraph created using JavaScript";  
+    function addParagraph() {
+        document.body.appendChild(newParagraph);
+        console.log("New paragraph added");
+    }
+    document.querySelector(".add").addEventListener("click", addParagraph);
+
+    // Remove the new paragraph with a 2nd button and click
+    document.querySelector(".remove").addEventListener("click", function removeParagraph() {
+        newParagraph.remove();   
+        console.log("New paragraph removed");
+    })  
+
+    // Toggle background color with the 3rd button and click
+    const bodyE1 = document.querySelector("body");
+    const para = document.getElementById("para");
+    const btn = document.getElementById("change_background");
+    let isBgGrey = true;  
+    function toggleBgColor() {
+      bodyE1.style.backgroundColor = isBgGrey ? "blue" : "grey";
+      isBgGrey = !isBgGrey;
+      btn.textContent = isBgGrey ? "Change Background Color to Blue" : "Change Background Color to Grey";
+    }
+    btn.addEventListener("click", toggleBgColor);
+
+    // Remove event listener with mouseover on the paragraph
+    para.addEventListener("mouseover", function removeEvent() {
+        btn.removeEventListener("click", toggleBgColor);
+        console.log("Background Change color event removed");
+        btn.textContent = "Background Color Change Disabled";
+    });
+
+    // Keydown KeyUp event listener on input field
+    const inputField = document.getElementById("textInput");
+    inputField.addEventListener("keyup", function(event) {
+        display.textContent = "You typed: " + event.target.value;
+        if (event.key === "Enter") {
+            alert("You pressed Enter! Input value: " + event.target.value);
+            event.target.value = ""; // Clear input field after pressing Enter
+            display.textContent = ""; // Clear display paragraph
+        }
+    })
+
+    </script>
+</body>
+</html>
