@@ -83,8 +83,10 @@ HTML
 |---------------------------|---------------------------------------------|
 | `document.getElementById()` | Selects an element by its ID                |
 | `document.getElementByTagName()` | Selects an element by its tag (e.g button, img, etc)               |
+| `document.getElementByClassName()` | Selects an element by its class              |
 | `document.querySelector()`  | Selects the first matching CSS selector     |
 | `document.querySelectorAll()` | Selects all matching elements as a NodeList |
+| `document.body.children` | Selects all elements within the body element |
 
 Example"
 ```js
