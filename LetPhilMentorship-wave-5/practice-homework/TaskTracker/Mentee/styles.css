@@ -1,0 +1,74 @@
+/* =======================================================================
+   PROJECT: TaskTracker Lite — DOM + Events
+   PURPOSE: Add visuals (colors, spacing, layout) to the HTML structure.
+
+   ✅ REQUIRED CLASS NAMES:
+     .header, .container, .task-item, .task-text, .btn,
+     .complete, .delete, .done
+   ✅ THEME CLASS:
+     body.dark
+======================================================================= */
+
+/* STEP A: Base styles with CSS variables in :root and overrides in body.dark */
+:root {
+  --bg-color: #cbc8c8;
+  --text-color: #333;
+  --header-bg: #26210d;
+  --header-text: #fff;
+  --btn-bg: #ca862d;
+  --btn-text: #fff;
+  --btn-hover-bg: #45a049;
+  --task-bg: #fff;
+  --task-border: #ccc;
+  --status-color: red;
+}
+/* STEP B: Style .header and .container for layout */
+.header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.5rem;
+  text-align: center;
+  margin: auto;
+ 
+}
+
+.container {
+  max-width: 650px;
+  margin: w auto;
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+/* STEP C: Style #taskForm, #taskInput, #addBtn, #themeBtn */
+#taskForm {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-content: center;
+}
+#taskInput {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid var(--task-border);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+#addBtn, #themeBtn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+  font-size: 1rem;
+}
+/* STEP D: Style #status for feedback */
+
+/* STEP E: Style #taskList, .task-item, .task-text, and add .done */
+
+/* STEP F: Style .btn, .btn.complete, .btn.delete */
+
+/* STEP G: Add media query for responsive stacking */
