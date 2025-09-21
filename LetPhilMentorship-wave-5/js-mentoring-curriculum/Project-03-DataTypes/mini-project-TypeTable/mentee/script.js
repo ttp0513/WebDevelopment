@@ -94,7 +94,7 @@ function buildList(values) {
     const display = toDisplay(value);
     const type = describeType(value);
     const listItem = document.createElement('li');
-    listItem.textContent = `${display} - ${type}`
+    listItem.textContent = `${display} - ${type}`;
     outputList.appendChild(listItem);
   });
 }
