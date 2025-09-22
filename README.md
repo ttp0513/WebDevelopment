@@ -34,12 +34,16 @@ Here are some of the hands-on projects I'm working on:
 
 | Project Name       | Description                          | Status     |
 |--------------------|--------------------------------------|------------|
-| `portfolio-site`   | My personal portfolio website        | 🚧 In Progress |
+| `Personal Portfolio`   | My personal portfolio website        | 🚧 In Progress |
+| `Geolift Analysis`   | Webpage that allows user to design and analyze geo-test outputs      | 🚧 In Progress |
+
 
 ## 📚 Resources I'm Using
 - [roadmap.sh FullStack](https://roadmap.sh/full-stack)
 - [freeCodeCamp FullStack Course](https://www.freecodecamp.org/)
 - [CSS Diner](https://flukeout.github.io/)
+- [Udemy - Python for Data Analysis & Business Intelligence](https://www.udemy.com/course/python-foundations-for-data-analysis/)
+- Youtube
 
 ## 🧭 Mentorship & Community
 
