@@ -6,6 +6,7 @@ function addStudent(name, grade) {
     const student = { name, grade };
     students.push(student);
     console.log(`Added student: ${name}, Grade: ${grade}`);
+    renderStudentList();
 }   
 
 // 3. Function to remove a student by name
@@ -20,6 +21,7 @@ function removeStudent(name, grade) {
     } else {
         console.log(`Student ${name} not found`);
     }           
+    renderStudentList();
 }
 
 // 4. Function to filter students by minimum grade
@@ -31,6 +33,41 @@ function filterStudentsByGrade(minGrade) {
 function mapStudentData() {
     return students.map(student => `${student.name} - Grade: ${student.grade}`);
 }
+
+// 6. Function to display output on web
+function renderStudentList(filtered = null) {
+    const list = document.getElementById("allStudents");
+    list.innerHTML = "";
+    const data = filtered || mapStudentData();
+    data.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    list.appendChild(li);
+    });
+    }
+
+    function handleAddStudent() {
+      const name = document.getElementById("addName").value;
+      const grade = parseInt(document.getElementById("addGrade").value);
+      if (name && !isNaN(grade)) {
+        addStudent(name, grade);
+      }
+    }
+
+    function handleRemoveStudent() {
+      const name = document.getElementById("removeName").value;
+      if (name) {
+        removeStudent(name);
+      }
+    }
+
+    function handleFilterStudents() {
+      const minGrade = parseInt(document.getElementById("minGrade").value);
+      if (!isNaN(minGrade)) {
+        const filtered = filterStudentsByGrade(minGrade).map(student => `${student.name} - Grade: ${student.grade}`);
+        renderStudentList(filtered);
+      }
+    }
 
 // Example usage:
 addStudent("Alice", 85);
