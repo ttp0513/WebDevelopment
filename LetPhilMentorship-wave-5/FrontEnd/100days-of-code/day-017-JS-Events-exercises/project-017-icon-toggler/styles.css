@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  gap: 20px;
+}
+
+li::before {
+  content: "•";
+}
+
+.favorite-icon {
+  font-size: 14px;
+}
+
+.filled {
+  color: red;
+}

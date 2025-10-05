@@ -1,0 +1,87 @@
+<!-- Today I learned about Box Model and how to style the box !-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="The Phan"/>
+        <title> The Box Model </title>
+    </head>
+    <style>
+        /* Padding is the inner space, space between content and border
+        Padding follow the order: top right bottom left, example
+        padding: 10px 20px 15px 5px (top 20px, right 20px, bottom 15px, left 5px) */
+        .box-padding{
+            background-color: aqua;
+            border: 5px solid black;
+            padding: 20px;
+        }
+
+        .box-nopadding{
+            background-color: lightblue;
+            border: 5px solid black;
+        }
+
+        #box{
+            display: flex;
+            gap: 10px;
+            
+        }
+        /* the last stype overwrites the previous one */
+        .box-dotted-border{
+            width: 100px;
+            border: 5px dotted rgb(255, 196, 221);
+        }
+
+        .box-radius-border{
+            width: 100px;
+            border-radius: 20%;
+            border: 5px solid red;
+            text-align: center;
+        }
+
+        /* Box shadow adds dept, following x-offset, y-offet, blur-radius, and color */
+        .box-shadow{
+            box-shadow: 5px 5px 5px black
+        }
+        /* By default, CSS uses box-sizing: content-box, which means:
+            1. The width and height you set apply only to the content.
+            2. Padding and border are added outside that width/height, increasing the total size of the element.
+
+        With box-sizing: border-box:
+        1. The width and height include content + padding + border. Thus, the total size of the elememt is equal to the given width and height
+        2. This makes it much easier to control layout and spacing, especially in responsive designs. */
+        .box-noboxsizing {
+            width: 300px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+
+        }
+
+        .box-boxsizing {
+            width: 300px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            box-sizing:border-box;
+        }
+        
+    </style>
+    <body>
+        <div class="box-nopadding"> This is a Solid Border Box with no padding </div>
+        <hr>
+        <div class="box-padding"> This is a Solid Border Box with padding 20px </div>
+        <hr>
+        <section id="box">
+        <div class="box-dotted-border"> Dotted Border Box Without Padding </div>
+        <div class="box-radius-border"> Solid Border Box with Radius 20%</div>
+        <div class="box-shadow"> Solid Border Box with Shadow </div>
+        </section>
+        <hr>
+        <div class="box-noboxsizing"> Solid Border Box with width 300px, height 100px, padding 20px, but no box-sizing : border-box </div>
+        <hr>
+        <div class="box-boxsizing"> Solid Border Box with width 300px, height 100px, padding 20px, with box-sizing : border-box </div>
+        </section>
+    </body>
+</html>

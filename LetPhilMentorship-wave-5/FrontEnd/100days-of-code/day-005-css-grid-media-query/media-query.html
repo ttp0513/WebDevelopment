@@ -1,0 +1,152 @@
+<!--This covers CSS media queries -->
+<!-- Definition: Media query is a CSS feature that detects screen size and applies a specific style accordingly-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Query Demo</title>
+  <style>
+/* ================================
+   Base Reset and Global Styles
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* ================================
+   Layout Styles
+================================ */
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #00beef;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Two-column layout: content takes 2x space */
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.content,
+.sidebar {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+/* ================================
+   Typography
+================================ */
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* ================================
+   Media Queries
+================================ */
+
+/* Breakpoint: ≤ 800px
+   - Stack layout vertically
+   - Change sidebar background for visual cue
+*/
+@media only screen and (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .sidebar {
+    background-color: #e0f7fa; /* Light blue background for contrast */
+  }
+}
+
+/* Breakpoint: ≤ 600px
+   - Reduce padding and font sizes for smaller screens
+*/
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .content,
+  .sidebar {
+    padding: 1rem;
+  }
+}
+
+/* Breakpoint: ≤ 400px
+   - Further reduce font sizes
+   - Change header color for emphasis
+*/
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+    color: #ff5722; /* Orange for visual emphasis */
+  }
+
+  .site-header p {
+    font-size: 1.2rem;
+  }
+
+  .site-footer {
+    font-size: 1.2rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+  <!-- Header section with title and subtitle -->
+  <header class="site-header">
+    <h1>Responsive Design Demo</h1>
+    <p>Resize the browser to see media queries in action</p>
+  </header>
+
+  <!-- Main layout container with two columns: content + sidebar -->
+  <main class="container">
+    <section class="content">
+      <h2>Main Content</h2>
+      <p>This section adapts its font size and layout based on screen width.</p>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>This sidebar stacks below the content on smaller screens.</p>
+    </aside>
+  </main>
+
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <p>© 2025 Media Query Project</p>
+  </footer>
+</body>
+</html>
