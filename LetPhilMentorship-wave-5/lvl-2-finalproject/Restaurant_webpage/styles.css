@@ -1,0 +1,85 @@
+/* Global Styles */
+:root {
+    --main-color: #172031;
+    --secondary-color: #EAA023;
+ 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Reset default styles for all elements */
+ul {
+    list-style: none;
+}
+
+/* Remove underline from all anchor tags */
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    margin: auto;
+    max-width: 93%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.row.justify-content-between {
+    justify-content: space-between;
+}
+
+.top {
+    background-color: var(--main-color);
+}
+
+/* Logo styles */   
+.top .logo img {
+    width: 100px;
+   
+}
+
+.top .menu-bar {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+
+}
+
+/* Hamburger menu styles */
+.top .menu-bar span{
+    display: block;
+    height: 2px;
+    width: 40px;
+    background-color: var(--secondary-color);
+    position: relative;
+}
+
+.top .menu-bar span::before {
+    height: 100%;
+    width: 100%;
+    content: '';
+    display: block;
+    position: absolute;
+    transform: translateY(-10px);
+    background-color: var(--secondary-color);    
+}
+
+.top .menu-bar span::after {
+    height: 100%;
+    width: 100%;
+    content: '';
+    display: block;
+    position: absolute;
+    transform: translateY(10px);
+    background-color: var(--secondary-color);    
+}
