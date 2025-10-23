@@ -47,6 +47,7 @@ a {
    
 }
 
+/* Hamburger menu styles */
 .top .menu-bar {
     cursor: pointer;
     display: flex;
@@ -55,7 +56,6 @@ a {
 
 }
 
-/* Hamburger menu styles */
 .top .menu-bar span{
     display: block;
     height: 2px;
@@ -81,5 +81,20 @@ a {
     display: block;
     position: absolute;
     transform: translateY(10px);
-    background-color: var(--secondary-color);    
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;     
+} 
+
+/* Active state for hamburger menu */
+.top .menu-bar.active span {
+    background-color: transparent;
 }
+
+.top .menu-bar.active span::before {
+    transform: rotate(-135deg);
+}
+
+.top .menu-bar.active span::after {  
+    transform: rotate(135deg);
+}
+
