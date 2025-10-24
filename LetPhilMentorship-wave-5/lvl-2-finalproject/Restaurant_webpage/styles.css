@@ -1,7 +1,12 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Honk&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Niconne&family=Oregano:ital@0;1&family=Rubik+Puddles&display=swap');
+
 /* Global Styles */
 :root {
-    --main-color: #172031;
-    --secondary-color: #EAA023;
+    --main-color:#172031;
+    --secondary-color:  #cca43d;
+    --text-color: #cca43d;
  
 }
 
@@ -85,7 +90,7 @@ a {
     transition: all 0.3s ease;     
 } 
 
-/* Active state for hamburger menu */
+/* Convert hamburger-menu icon to cross-menu icon when clicked */
 .top .menu-bar.active span {
     background-color: transparent;
 }
@@ -97,4 +102,66 @@ a {
 .top .menu-bar.active span::after {  
     transform: rotate(135deg);
 }
+
+/* Menu item animation when menu bar is active */
+.top .menu-bar.active {
+    position: relative;
+    top: 10%;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.menu-items.active {
+    transform: translateY(0);
+}
+/* Navigation menu styles */
+.menu-items {
+    position: fixed;
+    width: 10%;
+    height: 33.6%;
+    background-color: var(--main-color);
+    right: 0;
+    top: 0;
+    padding: 103.5px 0px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+nav li a{
+  display: block; 
+  width: 100%; 
+  padding: 20px; 
+  position: relative; 
+  z-index: 2;
+  text-decoration: none;
+  color: var(--text-color);
+  text-align: center;
+  font-size: 20px;
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500; 
+  font-style: normal;
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box;  
+  -webkit-box-sizing: border-box; 
+}
+
+/* Menu item hover effect */
+
+nav li a:hover{ border-bottom: 0px; color: var(--main-color);}
+
+nav li a:after { 
+  content: "";
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 0.3s ease 0s; 
+  -webkit-transition: all 0.3s ease 0s; 
+  z-index: -1;
+}
+
+nav li a:hover:after{ width: 100%; }
+nav a:after{ background: var(--secondary-color); }
 
