@@ -4,9 +4,9 @@
 
 /* Global Styles */
 :root {
-    --main-color:#172031;
-    --secondary-color:  #cca43d;
-    --text-color: #cca43d;
+    --main-color:#d9caad;
+    --secondary-color:  #405742;
+    --text-color: #405742;
  
 }
 
@@ -28,6 +28,8 @@ a {
 }
 
 
+/* Top Section 
+Container and Row Styles */
 .container {
     margin: auto;
     max-width: 93%;
@@ -35,25 +37,30 @@ a {
 
 .row {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+
 }
 
 .row.justify-content-between {
     justify-content: space-between;
+
 }
 
 .top {
     background-color: var(--main-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Logo styles */   
 .top .logo img {
-    width: 100px;
+    width: 75px;
    
 }
 
-/* Hamburger menu styles */
-.top .menu-bar {
+/* Hamburger nav styles */
+.top .nav-bar {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -61,15 +68,15 @@ a {
 
 }
 
-.top .menu-bar span{
+.top .nav-bar span{
     display: block;
-    height: 2px;
+    height: 3px;
     width: 40px;
     background-color: var(--secondary-color);
     position: relative;
 }
 
-.top .menu-bar span::before {
+.top .nav-bar span::before {
     height: 100%;
     width: 100%;
     content: '';
@@ -79,7 +86,7 @@ a {
     background-color: var(--secondary-color);    
 }
 
-.top .menu-bar span::after {
+.top .nav-bar span::after {
     height: 100%;
     width: 100%;
     content: '';
@@ -90,44 +97,44 @@ a {
     transition: all 0.3s ease;     
 } 
 
-/* Convert hamburger-menu icon to cross-menu icon when clicked */
-.top .menu-bar.active span {
+/* Convert hamburger-nav icon to cross-nav icon when clicked */
+.top .nav-bar.active span {
     background-color: transparent;
 }
 
-.top .menu-bar.active span::before {
+.top .nav-bar.active span::before {
     transform: rotate(-135deg);
 }
 
-.top .menu-bar.active span::after {  
+.top .nav-bar.active span::after {  
     transform: rotate(135deg);
 }
 
-/* Menu item animation when menu bar is active */
-.top .menu-bar.active {
+/* nav item animation when nav bar is active */
+.top .nav-bar.active {
     position: relative;
     top: 10%;
     z-index: 1001;
     transition: transform 0.3s ease;
 }
 
-.menu-items.active {
+.nav-items.active {
     transform: translateY(0);
 }
-/* Navigation menu styles */
-.menu-items {
-    position: fixed;
-    width: 10%;
-    height: 33.6%;
+/* Navigation item styles */
+.nav-items {
+    position: absolute;
+    width: 150px;
     background-color: var(--main-color);
     right: 0;
     top: 0;
-    padding: 103.5px 0px;
+    padding: 61px 0 0 0;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    opacity: 0.8;
 }
 
-nav li a{
+.nav-items a{
   display: block; 
   width: 100%; 
   padding: 20px; 
@@ -141,27 +148,63 @@ nav li a{
   font-optical-sizing: auto;
   font-weight: 500; 
   font-style: normal;
-  box-sizing: border-box;  
   -moz-box-sizing: border-box;  
   -webkit-box-sizing: border-box; 
+   box-sizing: border-box;  
 }
 
 /* Menu item hover effect */
 
-nav li a:hover{ border-bottom: 0px; color: var(--main-color);}
+.nav-items a:hover{ border-bottom: 0px; color: var(--main-color);}
 
-nav li a:after { 
+.nav-items a:after { 
   content: "";
   height: 100%; 
   left: 0; 
   top: 0; 
   width: 0px;  
   position: absolute; 
-  transition: all 0.3s ease 0s; 
   -webkit-transition: all 0.3s ease 0s; 
+  transition: all 0.3s ease 0s; 
   z-index: -1;
 }
 
-nav li a:hover:after{ width: 100%; }
-nav a:after{ background: var(--secondary-color); }
+.nav-items a:hover:after{ width: 100%; }
+.nav-items a:after{ background: var(--secondary-color); }
 
+/* Hero Section Styles */
+    /* Hero-Image Section */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-image::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('./asset/img/hero-img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.85;
+    z-index: -2;
+}   
+
+.hero-image::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0.3;
+    z-index: -1;
+}
