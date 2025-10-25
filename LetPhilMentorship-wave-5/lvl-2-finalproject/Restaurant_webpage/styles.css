@@ -3,7 +3,7 @@
 /* Global Styles */
 :root {
     --main-color:#d9caad;
-    --secondary-color:  #405742;
+    --secondary-color:  #61561e;
     --text-color: #4f4406;
  
 }
@@ -135,13 +135,12 @@ Container and Row Styles */
     transition: transform 0.3s ease;
 }
 
-.nav-items.active {
-    transform: translateY(0);
-}
+
 /* Navigation item styles */
 .nav-items {
     position: absolute;
-    width: 150px;
+    width: 15vw;
+    height: 100vh;
     background-color: var(--main-color);
     right: 0;
     top: 0;
@@ -151,6 +150,9 @@ Container and Row Styles */
     opacity: 0.8;
 }
 
+.nav-items.active {
+    transform: translateX(0);
+}
 .nav-items a{
   display: block; 
   width: 100%; 
@@ -184,10 +186,20 @@ Container and Row Styles */
   -webkit-transition: all 0.3s ease 0s; 
   transition: all 0.3s ease 0s; 
   z-index: -1;
+  background: var(--secondary-color); 
 }
 
 .nav-items a:hover:after{ width: 100%; }
-.nav-items a:after{ background: var(--secondary-color); }
+/* Nav Logo Style */
+.nav-items .logo img {
+    width: 150px;
+
+}
+
+.nav-items .logo {
+    text-align: center;
+}
+
 
 /* Hero Section Styles */
 
@@ -199,6 +211,7 @@ Container and Row Styles */
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden; /* hide any overflow content */
 }
 
 .hero-image::before {
@@ -214,7 +227,7 @@ Container and Row Styles */
     background-attachment: fixed;
     opacity: 0.85;
     z-index: -2;
-    animation: Inout 8s infinite;
+    animation: Inout 10s infinite;
 }   
 
 @keyframes Inout {
