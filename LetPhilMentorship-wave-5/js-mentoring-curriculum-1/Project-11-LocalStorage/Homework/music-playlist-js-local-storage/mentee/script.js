@@ -2,7 +2,8 @@
 // Each song will be an object with { title, artist, mood, link }
 //  Declare a variable named "playlist" and set it to an empty array
 // 🧪 Console log to confirm the playlist is initialized as an empty array
-
+const playlist = [];
+console.log("Initialized playlist:", playlist);
 //  Step 2: Get references to all the DOM elements (HTML elements we interact with)
 //  Use document.getElementById() to store references to:
 // - title input        → id="title"
@@ -15,7 +16,27 @@
 // - shuffle button     → id="shuffleBtn"
 // - dark mode button   → id="toggleModeBtn"
 //  Console log to confirm all DOM elements were successfully selected
+const titleInput = document.getElementById("title");
+const artistInput = document.getElementById("artist");
+const linkInput = document.getElementById("link");
+const moodSelect = document.getElementById("mood");
+const songForm = document.getElementById("songForm");
+const playlistContainer = document.getElementById("playlist");
+const filterMoodSelect = document.getElementById("filterMood");
+const shuffleBtn = document.getElementById("shuffleBtn");
+const toggleModeBtn = document.getElementById("toggleModeBtn");
 
+console.log("DOM Elements:", {
+  titleInput,
+  artistInput,
+  linkInput,
+  moodSelect,
+  songForm,
+  playlistContainer,
+  filterMoodSelect,
+  shuffleBtn,
+  toggleModeBtn
+});
 // Step 3: Function to load the playlist from localStorage
 //  Define a function called loadPlaylist()
 // Inside the function:
@@ -24,14 +45,27 @@
 // - Then update the playlist array with the parsed data
 //  Console log to show the playlist loaded from localStorage
 //  Console log to show that no playlist data was found (if none exists)
-
+function loadPlaylist() {
+  const savedData = localStorage.getItem("customPlaylist");
+  if (savedData) {
+    const parsedData = JSON.parse(savedData);
+    playlist.push(...parsedData);
+    console.log("Loaded playlist from localStorage:", playlist);
+  } else {
+    console.log("No playlist data found in localStorage.");
+  }
+}
 //  Step 4: Function to save the playlist into localStorage
 //  Define a function called savePlaylist()
 // Inside the function:
 // - Use JSON.stringify() to convert the playlist array to a string
 // - Use localStorage.setItem() to save it with the key "customPlaylist"
 //  Console log to confirm playlist was saved to localStorage
-
+function savePlaylist() {
+  const playlistString = JSON.stringify(playlist);
+  localStorage.setItem("customPlaylist", playlistString);
+  console.log("Saved playlist to localStorage:", playlist);
+}
 //  Step 5: Function to render the songs onto the screen
 //  Define a function called renderPlaylist(songsToRender)
 // Inside the function:
@@ -48,10 +82,24 @@
   <a href="${song.link}" target="_blank">🎧 Listen</a><br>
   <button class="delete-btn" data-index="${index}">🗑️ Delete</button>
 */
-
+function renderPlaylist(songsToRender) {
+  playlistContainer.innerHTML = "";
+  songsToRender.forEach((song, index) => {
+    const songDiv = document.createElement("div");
+    songDiv.classList.add("song-card");
+    songDiv.innerHTML = `
+      <strong>${song.title}</strong><br>
+      <em>Artist:</em> ${song.artist}<br>
+      <em>Mood:</em> ${song.mood}<br>
+      <a href="${song.link}" target="_blank">🎧 Listen</a><br>
+      <button class="delete-btn" data-index="${index}">🗑️ Delete</button>
+    `;
 // 🔹 4. Append the new div to the playlist container
 // 🧪 Console log to show which songs are being rendered
-
+    playlistContainer.appendChild(songDiv);
+    console.log(`Rendered song: ${song.title} by ${song.artist}`);
+  });
+};
 // 🧹 Then, after the forEach loop:
 // - Use document.querySelectorAll(".delete-btn") to get all delete buttons
 // - Loop through them and add a click event listener to each:
@@ -59,6 +107,16 @@
 //    → Remove the song from the playlist array using splice()
 //    → Save and re-render the playlist again
 // 🧪 Console log to confirm a song was deleted and show its index
+  const deleteButtons = document.querySelectorAll(".delete-btn");
+  deleteButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const songIndex = parseInt(btn.getAttribute("data-index"));
+      playlist.splice(songIndex, 1);
+      savePlaylist();
+      renderPlaylist(playlist);
+      console.log(`Deleted song at index: ${songIndex}`);
+    });
+  });
 
 // ➕ Step 6: Function to handle adding a new song
 // 👉 Define a function called addSong(e)
@@ -70,7 +128,20 @@
 // - Call renderPlaylist(playlist)
 // - Use songForm.reset() to clear the form
 // 🧪 Console log to confirm a new song was added
-
+function addSong(e) {
+  e.preventDefault();
+  const newSong = {
+    title: titleInput.value,
+    artist: artistInput.value,
+    mood: moodSelect.value,
+    link: linkInput.value
+  };
+  playlist.push(newSong);
+  savePlaylist();
+  renderPlaylist(playlist);
+  songForm.reset();
+  console.log("Added new song:", newSong);
+}
 // 🎯 Step 7: Filter playlist by mood
 // 👉 Define a function called filterPlaylist()
 // Inside the function:
@@ -80,7 +151,17 @@
 // - Then call renderPlaylist(filtered)
 // 🧪 Console log to show which mood was selected for filtering
 // 🧪 Console log to show filtered results
-
+function filterPlaylist() {
+  const selectedMood = filterMoodSelect.value;
+  if (selectedMood === "All") {
+    renderPlaylist(playlist);
+    console.log("Filter: All moods selected.");
+  } else {
+    const filteredSongs = playlist.filter(song => song.mood === selectedMood);
+    renderPlaylist(filteredSongs);
+    console.log(`Filter: Showing songs with mood "${selectedMood}".`, filteredSongs);
+  }
+};
 // 🔀 Step 8: Shuffle the playlist using Fisher-Yates algorithm
 // 👉 Define a function called shufflePlaylist()
 // Inside the function:
@@ -89,7 +170,15 @@
 // - Swap playlist[i] and playlist[j] using destructuring
 // - After the loop, save and render the playlist again
 // 🧪 Console log to confirm the playlist was shuffled
-
+function shufflePlaylist() {
+  for (let i = playlist.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [playlist[i], playlist[j]] = [playlist[j], playlist[i]];
+  }
+  savePlaylist();
+  renderPlaylist(playlist);
+  console.log("Shuffled the playlist.");
+};
 // 🌙 Step 9: Toggle between Dark Mode and Light Mode
 // 👉 Define a function called toggleDarkMode()
 // Inside the function:
@@ -98,7 +187,13 @@
 // - Update toggle button text accordingly ("Light Mode" or "Dark Mode")
 // - Save the theme preference in localStorage (key = "theme")
 // 🧪 Console log to confirm dark mode toggle state
-
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  const isDarkMode = document.body.classList.contains("dark");
+  toggleModeBtn.textContent = isDarkMode ? "Dark Mode" : "Light Mode";
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  console.log(`Toggled dark mode: ${isDarkMode ? "Enabled" : "Disabled"}`);
+};
 // 💡 Step 10: Load the saved theme from localStorage
 // 👉 Define a function called loadTheme()
 // Inside the function:
@@ -106,7 +201,16 @@
 // - If it’s "dark", add the "dark" class to body and update toggle button text
 // 🧪 Console log to confirm dark theme was loaded
 // 🧪 Console log to confirm light/default theme
-
+function loadTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    toggleModeBtn.textContent = "Dark Mode";
+    console.log("Loaded dark theme from localStorage.");
+  } else {
+    console.log("Loaded light/default theme.");
+  }
+}; 
 // 🎯 Step 11: Add event listeners to buttons and form
 // 👉 Add the following event listeners:
 // - songForm "submit" → addSong
@@ -114,10 +218,18 @@
 // - shuffleBtn "click" → shufflePlaylist
 // - toggleModeBtn "click" → toggleDarkMode
 // 🧪 Console log to confirm all event listeners were attached
-
+songForm.addEventListener("submit", addSong);
+filterMoodSelect.addEventListener("change", filterPlaylist);
+shuffleBtn.addEventListener("click", shufflePlaylist);
+toggleModeBtn.addEventListener("click", toggleDarkMode);
+console.log("Attached event listeners to form and buttons.");
 // 🚀 Step 12: Initialize the app
 // 👉 Call the following functions:
 // - loadPlaylist()
 // - renderPlaylist(playlist)
 // - loadTheme()
 // 🧪 Console log to confirm the app has been initialized
+loadPlaylist();
+renderPlaylist(playlist);
+loadTheme();
+console.log("Initialized the Music Playlist App.");
